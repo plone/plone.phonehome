@@ -4,15 +4,6 @@ from plone.phonehome.config import ConnectionProblem
 from plone.phonehome.config import CHECK_URL, UPDATE_URL
 from plone.phonehome.config import OKCODE, UPDATECODE, FAILEDCODE
 
-workingset = ''
-workingset_hash = ''
-
-
-def setWorkingsetInfo(ws, wshash):
-    global workingset, workingset_hash
-    workingset = ws
-    workingset_hash = wshash
-
 
 def checkVersions(uid, workingset, workingset_hash):
     try:
