@@ -1,8 +1,8 @@
-CHECK_URL = 'http://localhost:9999/check?uid=%s&hash=%s'
-UPDATE_URL = 'http://localhost:9999/update'
+# CHECK_URL = 'http://localhost:9999/check?uid=%s&hash=%s'
+# UPDATE_URL = 'http://localhost:9999/update'
 
-# CHECK_URL = 'http://plonephonehome.appspot.com/check?uid=%s&hash=%s'
-# UPDATE_URL = 'http://plonephonehome.appspot.com/update'
+CHECK_URL = 'http://plonephonehome.appspot.com/check?uid=%s&hash=%s'
+UPDATE_URL = 'http://plonephonehome.appspot.com/update'
 
 
 CALL_TIMEOUT = 5
