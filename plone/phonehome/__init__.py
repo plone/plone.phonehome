@@ -6,7 +6,7 @@ import uuid
 import pkg_resources
 
 import checker
-from plone.phonehome.config import CALL_TIMEOUT
+from plone.phonehome.config import CALL_TIMEOUT, ConnectionProblem
 
 
 def initialize(context):
@@ -28,10 +28,10 @@ def initialize(context):
     # Check for existing uid, otherwise, create a new one
     import Zope2
     app = Zope2.app()
-    uid = getattr(app,'uid', None)
+    uid = getattr(app,'plonephonehomeid', None)
     if not uid:
         uid = uuid.uuid1().hex
-        app.uid = uid
+        app.plonephonehomeid = uid
         import transaction
         transaction.commit()
 
@@ -41,6 +41,6 @@ def initialize(context):
     try:
         checker.checkVersions(uid, ws, wshash)
     except ConnectionProblem, e:
-        logging.warning("Phone Home connection failed with error: %s" % e)
+        logging.warning("Plone Phone Home connection failed with error: %s" % e)
     finally:
         socket.setdefaulttimeout(timeout)
