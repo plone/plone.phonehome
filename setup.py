@@ -1,7 +1,7 @@
 import os
 from setuptools import setup, find_packages
 
-version = '1.0a3'
+version = '1.0a4'
 
 
 setup(name='plone.phonehome',
