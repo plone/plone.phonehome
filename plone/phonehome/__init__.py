@@ -32,9 +32,12 @@ def initialize(context):
     if not uid:
         uid = uuid.uuid1().hex
         app.plonephonehomeid = uid
-        import transaction
-        transaction.commit()
-
+        try:
+            import transaction
+            transaction.commit()
+        except ConflictError:
+            pass # Ignore
+            
     # Phone home
     timeout = socket.getdefaulttimeout()
     socket.setdefaulttimeout(CALL_TIMEOUT)

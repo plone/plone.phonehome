@@ -3,7 +3,14 @@ CHANGES
 =======
 
 
-1.0a1 (Unreleased)
+1.0a2 - Unreleased
 ------------------
 
-- Initial import
+- Ignore ConflictErrors when adding the plonephonehomeid.
+  [esteele] 
+
+1.0a1 - 2011-05-21
+------------------
+
+- Initial release 
+  [esteele]
