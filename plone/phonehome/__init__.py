@@ -9,6 +9,9 @@ import checker
 from plone.phonehome.config import CALL_TIMEOUT, ConnectionProblem
 
 
+logger = logging.getLogger('plone.phonehome')
+
+
 def initialize(context):
     # build environment description
     workingset = [(dist.project_name, dist.version) for dist in 
@@ -41,9 +44,12 @@ def initialize(context):
     # Phone home
     timeout = socket.getdefaulttimeout()
     socket.setdefaulttimeout(CALL_TIMEOUT)
+    logger.info("Connecting to plone.phonehome service.")
     try:
         checker.checkVersions(uid, ws, wshash)
     except ConnectionProblem, e:
-        logging.warning("Plone Phone Home connection failed with error: %s" % e)
+        logger.warning("plone.phonehome connection failed with error: %s" % e)
+    else:
+        logger.info("Connection complete.")
     finally:
         socket.setdefaulttimeout(timeout)
