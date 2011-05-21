@@ -1,8 +1,8 @@
 import urllib, urllib2
 
-from interfaces import ConnectionProblem
-from interfaces import CHECK_URL, UPDATE_URL
-from interfaces import OKCODE, UPDATECODE, FAILEDCODE
+from plone.phonehome.config import ConnectionProblem
+from plone.phonehome.config import CHECK_URL, UPDATE_URL
+from plone.phonehome.config import OKCODE, UPDATECODE, FAILEDCODE
 
 workingset = ''
 workingset_hash = ''
@@ -22,7 +22,7 @@ def checkVersions(uid, workingset, workingset_hash):
         raise ConnectionProblem(str(e))
 
     code, message = data.split('\n', 1)
-
+    
     if code in (OKCODE, FAILEDCODE):
         return code, message
 
