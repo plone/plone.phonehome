@@ -1,0 +1,3 @@
+ * Don't run when in fg mode
+ * Don't run during bin/instance adduser
+ 
