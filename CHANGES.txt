@@ -3,11 +3,19 @@ CHANGES
 =======
 
 
+1.0a3 - 2011-05-21
+------------------
+
+- Don't check in when running in Zope debug mode.
+  [esteele]
+
+
 1.0a2 - 2011-05-21
 ------------------
 
 - Ignore ConflictErrors when adding the plonephonehomeid.
   [esteele] 
+
 
 1.0a1 - 2011-05-21
 ------------------
