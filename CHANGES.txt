@@ -3,7 +3,7 @@ CHANGES
 =======
 
 
-1.0a2 - Unreleased
+1.0a2 - 2011-05-21
 ------------------
 
 - Ignore ConflictErrors when adding the plonephonehomeid.
