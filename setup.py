@@ -7,8 +7,7 @@ version = '1.0a1'
 setup(name='plone.phonehome',
       version=version,
       description="Provide anonymous package usage statistics to the Plone Foundation",
-      long_description= open("README.txt").read() + "\n" + open("CHANGES.txt").read()
-
+      long_description=open("README.txt").read() + "\n" + open("CHANGES.txt").read(),
       classifiers=[
           "Environment :: Web Environment",
           "Framework :: Plone",
